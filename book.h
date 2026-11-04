@@ -96,7 +96,7 @@ public:
     {
         return b1.price + b2.price;
     }
-    price += p;
-            return *this;
+    // price += p;
+    //         return *this;
 };
 }

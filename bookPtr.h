@@ -7,7 +7,7 @@ namespace jingahyun2693303
         book* bPtr;
     public:
         //생성자
-        bookPtr(const book& b = book{"bookTitle",1,10000}):bPtr{new book{b}}{}
+        bookPtr(const book& b = book{"bookTitle",1,10000}):bPtr{new book{b}}
         {
             std::cout << "constructor\n";
         }
@@ -38,12 +38,12 @@ namespace jingahyun2693303
             }
             return *this;
         }
-        bookPtr& operator=(const bookPtr& move) noexcept
+        bookPtr& operator=(bookPtr&& move) noexcept
         {
             if (this != &move)
             {
                 delete bPtr;
-                bPtr = move.bPtr 
+                bPtr = move.bPtr ;
                 move.bPtr = nullptr;
             }
             return *this;
